@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background: #ff6f61;
+            color: white;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeIn 3s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .gallery img {
+            margin: 10px;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: white;
+            background: #ff6f61;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 1.2em;
+        }
+        .navigation a:hover {
+            background: #e65a50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Picture Gallery</h1>
+    </header>
+
+    <div class="gallery">
+        <!-- Add or remove <img> tags below to include more pictures -->
+        <img src="https://via.placeholder.com/300x200" alt="Picture 1">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 2">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 3">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 4">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 5">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 6">
+        <!-- You can add more pictures here -->
+        <img src="https://via.placeholder.com/300x200" alt="Picture 7">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 8">
+        <img src="https://via.placeholder.com/300x200" alt="Picture 9">
+    </div>
+
+    <div class="navigation">
+        <a href="index.html">Back to Home</a>
+        <a href="about.html">About Him</a>
+        <a href="comments.html">Comments</a>
+    </div>
+<!--audio id="background-music" loop>
+        <source src="C:\Users\Tanaya\Desktop\new\MUSIC\128-Tum Tak - Raanjhanaa 128 Kbps.mp3">
+        Your browser does not support the audio element.
+    </audio-->
+    <audio src="MUSIC/tumtak.mp3" controls></audio>
+
+
+    <!-- Button to trigger music play >
+    <div>
+        <button class="play-button" onclick="document.getElementById('background-music').play()">Play Music</button>
+    </div-->
+
+</body>
+</html>

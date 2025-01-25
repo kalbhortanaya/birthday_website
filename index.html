@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            text-align: center;
+        }
+        header {
+            background: #ff6f61;
+            color: white;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeIn 3s;
+        }
+        header h2 {
+            font-size: 2em;
+            margin: 10px 0 0;
+            animation: fadeIn 4s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .birthday-animation {
+            position: relative;
+            margin-top: 70px;
+        }
+        .birthday-animation img {
+            width: 500px;
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        .navigation {
+            margin-top: 30px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: white;
+            background: #ff6f61;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 1.2em;
+        }
+        .navigation a:hover {
+            background: #e65a50;
+        }
+        /* Responsive Design for Mobile Devices */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            header h2 {
+                font-size: 1.8em;
+            }
+            .birthday-animation img {
+                width: 80%; 
+            }
+            .navigation a {
+                font-size: 1em; 
+                padding: 8px 16px;
+    </style>
+    </head>
+<body>
+    <header>
+        <h1>Welcome to the Celebration!</h1>
+        <h2>Happiest Birthday!</h2>
+    </header>
+
+    <div class="birthday-animation">
+        <!--img src="C:\Users\Tanaya\Desktop\new\GIF\a4d19890287115.5e139f5047d55.gif"-->
+     <!--img src="GIF/1.gif" alt="Birthday Animation"-->
+     <img src="GIF/1.gif" alt="Birthday Animation">
+
+
+
+    </div>
+
+    <div class="navigation">
+        <a href="about.html">About Him</a>
+        <a href="comments.html">Comments</a>
+        <a href="pictures.html">Pictures</a>
+    </div>
+    <!--audio id="background-music" loop>
+        <source src="C:\Users\Tanaya\Desktop\new\MUSIC\tumtak.mp3">
+        Your browser does not support the audio element.
+    </audio-->
+  <audio src="MUSIC/tumtak.mp3" controls></audio>
+
+
+
+    <!-- Button to trigger music play -->
+    <div>
+        <button class="play-button" onclick="document.getElementById('background-music').play()">Play Music</button>
+    </div>
+</body>
+</html>
