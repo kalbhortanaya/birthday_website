@@ -42,6 +42,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer; /* Indicate that the image is clickable */
         }
         .gallery img:hover {
             transform: scale(1.05);
@@ -63,6 +64,34 @@
         .navigation a:hover {
             background: #e65a50;
         }
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -71,25 +100,25 @@
     </header>
 
     <div class="gallery">
-        <img src="2.jpg" alt="Picture 1">
-        <img src="3.jpg" alt="Picture 2">
-        <img src="10.jpg" alt="Picture 3">
-        <img src="11.jpg" alt="Picture 4">
-        <img src="13.jpg" alt="Picture 5">
-        <img src="7.jpg" alt="Picture 6">
-        <img src="12.jpg" alt="Picture 7">
-        <img src="9.jpg" alt="Picture 8">
-        <img src="8.jpg" alt="Picture 9">
-        <img src="8.jpg" alt="Picture 10">
-        <img src="2.jpg" alt="Picture 11">
-        <img src="3.jpg" alt="Picture 12">
-        <img src="11.jpg" alt="Picture 13">
-        <img src="10.jpg" alt="Picture 14">
-        <img src="5.jpg" alt="Picture 15">
-        <img src="9.jpg" alt="Picture 16">
-        <img src="5.jpg" alt="Picture 17">
-        <img src="10.jpg" alt="Picture 18">
-        <img src="11.jpg" alt="Picture 19"-->
+        <img src="2.jpg" alt="Picture 1" onclick="openModal(this)">
+        <img src="3.jpg" alt="Picture 2" onclick="openModal(this)">
+        <img src="10.jpg" alt="Picture 3" onclick="openModal(this)">
+        <img src="11.jpg" alt="Picture 4" onclick="openModal(this)">
+        <img src="13.jpg" alt="Picture 5" onclick="openModal(this)">
+        <img src="7.jpg" alt="Picture 6" onclick="openModal(this)">
+        <img src="12.jpg" alt="Picture 7" onclick="openModal(this)">
+        <img src="9.jpg" alt="Picture 8" onclick="openModal(this)">
+        <img src="8.jpg" alt="Picture 9" onclick="openModal(this)">
+        <img src="8.jpg" alt="Picture 10" onclick="openModal(this)">
+        <img src="2.jpg" alt="Picture 11" onclick="openModal(this)">
+        <img src="3.jpg" alt="Picture 12" onclick="openModal(this)">
+        <img src="11.jpg" alt="Picture 13" onclick="openModal(this)">
+        <img src="10.jpg" alt="Picture 14" onclick="openModal(this)">
+        <img src="5.jpg" alt="Picture 15" onclick="openModal(this)">
+        <img src="9.jpg" alt="Picture 16" onclick="openModal(this)">
+        <img src="5.jpg" alt="Picture 17" onclick="openModal(this)">
+        <img src="10.jpg" alt="Picture 18" onclick="openModal(this)">
+        <img src="11.jpg" alt="Picture 19" onclick="openModal(this)">
     </div>
 
     <div class="navigation">
@@ -99,6 +128,28 @@
     </div>
 
     <audio src="mushkil hai.mp3" controls></audio>
- <audio src="bulleya.mp3" controls></audio>
+    <audio src="bulleya.mp3" controls></audio>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Open modal when image is clicked
+        function openModal(img) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Close modal when close button is clicked
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>
