@@ -1,22 +1,30 @@
+/* General Styles */
 body {
     background-color: #121212;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
+/* Container Styling */
 .container {
-    max-width: 600px;
+    max-width: 400px;
     margin: 50px auto;
+    padding: 20px;
 }
 
+/* Heading */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
+/* Song List */
 .song-list {
     display: flex;
     flex-direction: column;
@@ -24,19 +32,38 @@ h1 {
     gap: 20px;
 }
 
+/* Individual Song Item */
 .song-item {
     display: flex;
     align-items: center;
     gap: 15px;
+    width: 100%;
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Hover Effect */
+.song-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Song Image */
 .song-item img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 5px;
+    object-fit: cover;
+    border: 2px solid #fff;
 }
 
+/* Song Title */
 .song-title {
     font-size: 18px;
     font-weight: bold;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
