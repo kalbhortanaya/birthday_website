@@ -3,35 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs Dedicated to You</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking to CSS -->
+    <title>Romantic Music Page</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .song {
+            text-align: center;
+            position: relative;
+        }
+        .song img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .song audio {
+            width: 200px;
+            margin: 10px 0;
+        }
+        .song p {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: bold;
+            margin: 0;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Songs Dedicated to You</h1>
-
-        <div class="song-list">
-            <div class="song-item">
-                <img src="tumtak.jpg" alt="Tum Tak">
-                <p class="TUM TAK ">TUM TAK</p>
-            </div>
-
-            <div class="song-item">
-                <img src="images/mera-yaar.jpg" alt="Mera Yaar">
-                <p class="song-title">MERA YAAR</p>
-            </div>
-
-            <div class="song-item">
-                <img src="images/bulleya.jpg" alt="Bulleya">
-                <p class="song-title">BULLEYA</p>
-            </div>
+    <div class="content">
+        <div class="song">
+            <img src="C:\Users\Tanaya\Desktop\new\GIF\tumtak.png"alt="TUM TAK">
+            <audio controls>
+                <source src="C:\Users\Tanaya\Desktop\new\MUSIC\tumtak.mp3"type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>TUM TAK</p>
         </div>
-    </div>
- <div class="navigation">
-        <a href="index.html">Back to Home</a>
-        <a href="about.html">About Him</a>
-        <a href="comments.html">Comments</a>
+        <div class="song">
+            <img src="merayaar.jpg" alt="MERAYAAR">
+            <audio controls>
+                <source src="merayaar.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>MERAYAAR</p>
+        </div>
+        <div class="song">
+            <img src="sultan.jpg" alt="SULTAN">
+            <audio controls>
+                <source src="sultan.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>SULTAN</p>
+        </div>
+        <div class="song">
+            <img src="bulleya.jpg" alt="BULLEYA">
+            <audio controls>
+                <source src="bulleya.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>BULLEYA</p>
+        </div>
+        <div class="song">
+            <img src="mushkilhai.jpg" alt="MUSHKILHAI">
+            <audio controls>
+                <source src="mushkilhai.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>MUSHKILHAI</p>
+        </div>
+        <div class="song">
+            <img src="romantic.jpg" alt="ROMANTIC">
+            <audio controls>
+                <source src="romantic.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>ROMANTIC</p>
+        </div>
+        <div class="song">
+            <img src="song7.jpg" alt="SONG 7">
+            <audio controls>
+                <source src="song7.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>SONG 7</p>
+        </div>
+        <div class="song">
+            <img src="song8.jpg" alt="SONG 8">
+            <audio controls>
+                <source src="song8.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>SONG 8</p>
+        </div>
     </div>
 </body>
 </html>
