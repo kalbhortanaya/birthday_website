@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-           background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
+            background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
             overflow: hidden;
             text-align: center;
         }
@@ -78,9 +78,52 @@
                 padding: 8px 16px;
             }
         }
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .popup-content p {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .popup-content button {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .popup-content button:hover {
+            background: #e65a50;
+        }
     </style>
 </head>
 <body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Are you ready for the birthday celebration?</p>
+            <button onclick="closePopup()">Ready</button>
+        </div>
+    </div>
+
     <header>
         <h1>Welcome to the Celebration!</h1>
         <h2>Happiest Birthday!</h2>
@@ -95,7 +138,6 @@
         <a href="comments.html">Comments</a>
         <a href="pictures.html">Pictures</a>
         <a href="songs.html">Songs for You</a>
-
     </div>
 
     <audio src="tumtak.mp3" controls></audio>
@@ -104,7 +146,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1"></script>
     <script>
         function startConfetti() {
-            var duration = 15 * 1000; // 5 seconds
+            var duration = 15 * 1000;
             var end = Date.now() + duration;
 
             (function frame() {
@@ -120,8 +162,14 @@
             })();
         }
 
-        window.onload = startConfetti;
+        window.onload = function() {
+            startConfetti();
+            document.getElementById("popup").style.display = "flex";
+        };
+        
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
     </script>
-
 </body>
 </html>
