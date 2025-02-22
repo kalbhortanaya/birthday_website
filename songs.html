@@ -6,7 +6,7 @@
     <title>Songs for You💗</title>
     <style>
         body {
-            font-family:'Arial', sans-serif;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
             margin: 0;
             padding: 0;
@@ -33,9 +33,11 @@
             border-radius: 20px;
             padding: 20px;
             box-sizing: border-box;
+            display: none; /* Hide songs until popup is closed */
         }
         .song {
             text-align: center;
+            position: relative;
         }
         .song img {
             width: 200px;
@@ -73,12 +75,144 @@
         .navigation a:hover {
             background: #cc0000;
         }
-        
-        /* POPUP STYLES */
-        .popup {
+
+        /* Popup Styling */
+        .popup-container {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 255, 255, 0.95);
-            padd
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .popup button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #ff6666;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup -->
+    <div class="popup-container" id="popup">
+        <div class="popup">
+            <p>If I could, I would dedicate the whole music industry to you,  
+               but here are my most favorite songs for you.  
+               Enjoy the concert... Listen to each and every lyric carefully.  
+               I have put my whole heart and feelings for you here. 🎶💖</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">Songs for You💗</div>
+
+    <!-- Songs List -->
+    <div class="content" id="songList">
+        <div class="song">
+            <img src="tump.png" alt="TUM TAK">
+            <audio controls>
+                <source src="tumtak.mp3" type="audio/mpeg">
+            </audio>
+            <p>TUM TAK💗</p>
+        </div>
+        
+        <div class="song">
+            <img src="bulleyp.png" alt="BULLEYA">
+            <audio controls>
+                <source src="bulleya.mp3" type="audio/mpeg">
+            </audio>
+            <p>BULLEYA💗</p>
+        </div>
+
+        <div class="song">
+            <img src="musp.png" alt="MUSHKILHAI">
+            <audio controls>
+                <source src="mushkil hai.mp3" type="audio/mpeg">
+            </audio>
+            <p>MUSHKIL HAI💗</p>
+        </div>
+
+        <div class="song">
+            <img src="tup.png" alt="TU HAI TOH">
+            <audio controls>
+                <source src="tu hai toh.mp3" type="audio/mpeg">
+            </audio>
+            <p>TU HAI TOH💗</p>
+        </div>
+
+        <div class="song">
+            <img src="merap.png" alt="MERAYAAR">
+            <audio controls>
+                <source src="mera yaar.mp3" type="audio/mpeg">
+            </audio>
+            <p>MERA YAAR💗</p>
+        </div>
+
+        <div class="song">
+            <img src="kunp.png" alt="KUNFAYA">
+            <audio controls>
+                <source src="kun.mp3" type="audio/mpeg">
+            </audio>
+            <p>KUN FAYA💗</p>
+        </div>
+
+        <div class="song">
+            <img src="tucp.png" alt="TUCHAHIYE">
+            <audio controls>
+                <source src="tuchahiye.mp3" type="audio/mpeg">
+            </audio>
+            <p>TU CHAHIYE💗</p>
+        </div>
+
+        <div class="song">
+            <img src="khwaabp.png" alt="MASHUP">
+            <audio controls>
+                <source src="mashup.mp3" type="audio/mpeg">
+            </audio>
+            <p>MASHUP💗</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Him</a>
+        <a href="comments.html">Comments</a>
+        <a href="pictures.html">Pictures</a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        window.onload = function() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("songList").style.display = "grid"; // Show songs after popup
+        }
+    </script>
+</body>
+</html>
