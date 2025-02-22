@@ -11,35 +11,31 @@
             background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
             overflow: hidden;
             text-align: center;
-            display: none;
         }
         #popup {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
+            color: white;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            flex-direction: column;
             z-index: 1000;
         }
-        #popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
         #popup button {
-            margin-top: 10px;
+            margin-top: 20px;
             padding: 10px 20px;
             font-size: 1.2em;
+            border: none;
             background: #ff6f61;
             color: white;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
+            border-radius: 5px;
+        }
+        #popup button:hover {
+            background: #e65a50;
         }
         header {
             background: #ff6f61;
@@ -110,13 +106,12 @@
     </style>
 </head>
 <body>
+
     <div id="popup">
-        <div id="popup-content">
-            <p>Are you ready for the birthday celebration?</p>
-            <button onclick="closePopup()">Ready</button>
-        </div>
+        <h2>Are you ready for the birthday celebration?</h2>
+        <button onclick="closePopup()">Ready</button>
     </div>
-    
+
     <header>
         <h1>Welcome to the Celebration!</h1>
         <h2>Happiest Birthday!</h2>
@@ -139,7 +134,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1"></script>
     <script>
         function startConfetti() {
-            var duration = 15 * 1000; // 15 seconds
+            var duration = 15 * 1000; // 5 seconds
             var end = Date.now() + duration;
 
             (function frame() {
@@ -157,9 +152,9 @@
 
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
-            document.body.style.display = 'block';
             startConfetti();
         }
     </script>
+
 </body>
 </html>
