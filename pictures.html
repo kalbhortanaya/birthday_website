@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-        background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
+            background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
             text-align: center;
             color: #333;
         }
@@ -26,99 +26,74 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-            gap: 15px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio */
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer; /* Indicate that the image is clickable */
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        .navigation {
-            margin-top: 20px;
-        }
-        .navigation a {
-            text-decoration: none;
-            color: white;
-            background: #ff6f61;
-            padding: 10px 20px;
-            margin: 10px;
-            border-radius: 5px;
-            display: inline-block;
-            font-size: 1.2em;
-        }
-        .navigation a:hover {
-            background: #e65a50;
-        }
-        /* Modal Styles */
-        .modal {
-            display: none; /* Hidden by default */
+        /* Popup Styles */
+        .popup {
             position: fixed;
-            z-index: 1;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
         }
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .popup-content h2 {
+            color: #ff6f61;
+            font-size: 1.8em;
+        }
+        .popup-content button {
+            background: #ff6f61;
             color: white;
-            font-size: 30px;
-            background: none;
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
             cursor: pointer;
+            margin-top: 10px;
+        }
+        .popup-content button:hover {
+            background: #e65a50;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Here is a gallery of memories, a collection of love.</h2>
+            <button onclick="closePopup()">Take Me There!</button>
+        </div>
+    </div>
+
     <header>
         <h1>Picture Gallery</h1>
     </header>
 
     <div class="gallery">
-        <img src="2.jpg" alt="Picture 1" onclick="openModal(this)">
-        <img src="white.jpg" alt="Picture 2" onclick="openModal(this)">
-        <img src="10.jpg" alt="Picture 3" onclick="openModal(this)">
-        <img src="11.jpg" alt="Picture 4" onclick="openModal(this)">
-        <img src="9.jpg" alt="Picture 5" onclick="openModal(this)">
-        <img src="13.jpg" alt="Picture 6" onclick="openModal(this)">
-        <img src="12.jpg" alt="Picture 7" onclick="openModal(this)">
-        <img src="5.jpg" alt="Picture 8" onclick="openModal(this)">
-        <img src="8.jpg" alt="Picture 9" onclick="openModal(this)">
-        <img src="3.jpg" alt="Picture 10" onclick="openModal(this)">
-        <img src="7.jpg" alt="Picture 11" onclick="openModal(this)">
-        <img src="lastm.jpg" alt="Picture 12" onclick="openModal(this)">
-        <!--img src="11.jpg" alt="Picture 13" onclick="openModal(this)">
-        <img src="10.jpg" alt="Picture 14" onclick="openModal(this)">
-        <img src="5.jpg" alt="Picture 15" onclick="openModal(this)">
-        <img src="9.jpg" alt="Picture 16" onclick="openModal(this)">
-        <img src="5.jpg" alt="Picture 17" onclick="openModal(this)">
-        <img src="10.jpg" alt="Picture 18" onclick="openModal(this)">
-        <img src="11.jpg" alt="Picture 19" onclick="openModal(this)"-->
+        <img src="2.jpg" alt="Picture 1">
+        <img src="white.jpg" alt="Picture 2">
+        <img src="10.jpg" alt="Picture 3">
+        <img src="11.jpg" alt="Picture 4">
+        <img src="9.jpg" alt="Picture 5">
+        <img src="13.jpg" alt="Picture 6">
+        <img src="12.jpg" alt="Picture 7">
+        <img src="5.jpg" alt="Picture 8">
+        <img src="8.jpg" alt="Picture 9">
+        <img src="3.jpg" alt="Picture 10">
+        <img src="7.jpg" alt="Picture 11">
+        <img src="lastm.jpg" alt="Picture 12">
     </div>
 
     <div class="navigation">
@@ -128,26 +103,9 @@
         <a href="songs.html">Songs for You</a>
     </div>
 
-
-    <!-- Modal -->
-    <div id="imageModal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
     <script>
-        // Open modal when image is clicked
-        function openModal(img) {
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("modalImage");
-            modal.style.display = "block";
-            modalImg.src = img.src;
-        }
-
-        // Close modal when close button is clicked
-        function closeModal() {
-            var modal = document.getElementById("imageModal");
-            modal.style.display = "none";
+        function closePopup() {
+            document.getElementById("popup").classList.add("hidden");
         }
     </script>
 </body>
